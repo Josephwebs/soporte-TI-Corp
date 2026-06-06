@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TicketManager.API</name>
+    </assembly>
+    <members>
+        <member name="M:TicketManager.API.Controllers.AuthController.Login(TicketManager.API.Controllers.LoginRequest)">
+            <summary>
+            Genera un token JWT simulado para propósitos de prueba de seguridad.
+            </summary>
+        </member>
+        <member name="M:TicketManager.API.Controllers.TicketsController.GetTickets(System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Obtiene un listado paginado de los tickets del sistema.
+            </summary>
+            <param name="status">Filtrar por estado del ticket (ej. Open, Closed)</param>
+            <param name="priority">Filtrar por prioridad (ej. Low, High)</param>
+            <param name="q">Término de búsqueda en título o descripción</param>
+            <param name="page">Número de página (default 1)</param>
+            <param name="pageSize">Cantidad de registros por página (default 10)</param>
+        </member>
+        <member name="M:TicketManager.API.Controllers.TicketsController.GetTicket(System.Guid)">
+            <summary>
+            Obtiene los detalles de un ticket específico a través de su Id.
+            </summary>
+        </member>
+        <member name="M:TicketManager.API.Controllers.TicketsController.CreateTicket(TicketManager.API.Application.DTOs.CreateTicketDto)">
+            <summary>
+            Crea un nuevo ticket de soporte.
+            </summary>
+        </member>
+        <member name="M:TicketManager.API.Controllers.TicketsController.UpdateTicket(System.Guid,TicketManager.API.Application.DTOs.UpdateTicketDto)">
+            <summary>
+            Actualiza los campos principales de un ticket.
+            </summary>
+        </member>
+        <member name="M:TicketManager.API.Controllers.TicketsController.ChangeStatus(System.Guid,TicketManager.API.Application.DTOs.ChangeStatusDto)">
+            <summary>
+            Cambia el estado actual del ticket (Ej. Abierto a Cerrado). Requiere rol Supervisor.
+            </summary>
+        </member>
+    </members>
+</doc>

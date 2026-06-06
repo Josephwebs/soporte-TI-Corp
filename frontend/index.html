@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soporte TI Corp</title>
+    <style>
+      /* Base y Modo Oscuro/Claro */
+      body {
+        margin: 0;
+        background-color: #F4F7F9;
+        font-family: "Inter", "Roboto", "Helvetica", "Arial", sans-serif;
+      }
+      :root {
+        --sk-bg: rgba(0, 0, 0, 0.11);
+        --sk-surface: #FFFFFF;
+        --sk-border: rgba(0, 0, 0, 0.12);
+        --sk-header: #FFFFFF;
+      }
+      @media (prefers-color-scheme: dark) {
+        body { background-color: #121212; }
+        :root {
+          --sk-bg: rgba(255, 255, 255, 0.13);
+          --sk-surface: #1E1E1E;
+          --sk-border: rgba(255, 255, 255, 0.12);
+          --sk-header: #1E1E1E;
+        }
+      }
+
+      /* Animación Shimmer */
+      @keyframes pulse {
+        0% { opacity: 1; }
+        50% { opacity: 0.4; }
+        100% { opacity: 1; }
+      }
+      .sk-anim { animation: pulse 1.5s ease-in-out 0.5s infinite; }
+
+      /* Estructura del Esqueleto */
+      .sk-header { height: 64px; background: var(--sk-header); border-bottom: 1px solid var(--sk-border); display: flex; align-items: center; padding: 0 24px; }
+      .sk-h-logo { width: 150px; height: 24px; background: var(--sk-bg); border-radius: 4px; }
+      .sk-container { max-width: 900px; margin: 40px auto 0; padding: 0 24px; }
+      .sk-top { display: flex; justify-content: space-between; margin-bottom: 32px; }
+      .sk-title { width: 200px; height: 40px; background: var(--sk-bg); border-radius: 4px; }
+      .sk-btn { width: 140px; height: 40px; background: var(--sk-bg); border-radius: 8px; }
+      
+      .sk-card { background: var(--sk-surface); border: 1px solid var(--sk-border); border-radius: 12px; padding: 24px; margin-bottom: 24px; }
+      .sk-line-1 { width: 40%; height: 32px; background: var(--sk-bg); border-radius: 4px; margin-bottom: 8px; }
+      .sk-line-2 { width: 80%; height: 20px; background: var(--sk-bg); border-radius: 4px; margin-bottom: 24px; }
+      .sk-chips { display: flex; gap: 8px; }
+      .sk-chip { width: 80px; height: 24px; background: var(--sk-bg); border-radius: 4px; }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <!-- Esqueleto Estático Inicial -->
+      <div class="sk-anim">
+        <div class="sk-header"><div class="sk-h-logo"></div></div>
+        <div class="sk-container">
+          <div class="sk-top">
+            <div class="sk-title"></div>
+            <div class="sk-btn"></div>
+          </div>
+          <div class="sk-card">
+            <div class="sk-line-1"></div>
+            <div class="sk-line-2"></div>
+            <div class="sk-chips"><div class="sk-chip"></div><div class="sk-chip"></div></div>
+          </div>
+          <div class="sk-card">
+            <div class="sk-line-1"></div>
+            <div class="sk-line-2"></div>
+            <div class="sk-chips"><div class="sk-chip"></div><div class="sk-chip"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
